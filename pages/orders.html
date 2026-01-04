@@ -15,7 +15,7 @@
         <option value="en">English</option><option value="fr">Français</option><option value="ar">العربية</option>
       </select>
       <span class="text-white small" id="username"></span>
-      <button id="btnLogout" class="btn btn-sm btn-outline-light">Logout</button>
+      <button id="btnLogout" class="btn btn-sm btn-outline-light"data-i18n="logout">Logout</button>
     </div>
   </nav>
 
@@ -33,7 +33,7 @@
     </aside>
 
     <main class="content p-4">
-      <h2 class="h4 mb-4">Orders Management</h2>
+      <h2 class="h4 mb-4" data-i18n="ordersManagement"data-i18n="ordersManagement">Orders Management</h2>
 
       <div class="filters-bar">
         <div class="flex-grow-1">
@@ -58,7 +58,7 @@
 
       <div class="table-container">
         <div class="table-header">
-          <h5 class="mb-0">All Orders</h5>
+          <h5 class="mb-0" data-i18n="allOrders">All Orders</h5>
           <div class="table-actions">
             <button class="btn btn-success btn-sm" onclick="openCreateModal()">+ Add Order</button>
             <button class="btn btn-outline-primary btn-sm" onclick="exportToCSV()">📄 Export CSV</button>
@@ -97,7 +97,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTitle">Add Order</h5>
+          <h5 class="modal-title" id="modalTitle"data-i18n="addOrder">Add Order</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">

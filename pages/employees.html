@@ -15,7 +15,7 @@
         <option value="en">English</option><option value="fr">Français</option><option value="ar">العربية</option>
       </select>
       <span class="text-white small" id="username"></span>
-      <button id="btnLogout" class="btn btn-sm btn-outline-light">Logout</button>
+      <button id="btnLogout" class="btn btn-sm btn-outline-light"data-i18n="logout">Logout</button>
     </div>
   </nav>
 
@@ -33,7 +33,7 @@
     </aside>
 
     <main class="content p-4">
-      <h2 class="h4 mb-4">Employees Management</h2>
+      <h2 class="h4 mb-4" data-i18n="employeesManagement"data-i18n="employeesManagement"data-i18n="employeesManagement">Employees Management</h2>
 
       <div class="filters-bar">
         <div class="flex-grow-1">
@@ -61,7 +61,7 @@
 
       <div class="table-container">
         <div class="table-header">
-          <h5 class="mb-0">All Employees</h5>
+          <h5 class="mb-0" data-i18n="allEmployees">All Employees</h5>
           <div class="table-actions">
             <button class="btn btn-success btn-sm" onclick="openCreateModal()">+ Add Employee</button>
             <button class="btn btn-outline-primary btn-sm" onclick="exportToCSV()">📄 Export CSV</button>
@@ -99,7 +99,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTitle">Add Employee</h5>
+          <h5 class="modal-title" id="modalTitle"data-i18n="addEmployee">Add Employee</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
