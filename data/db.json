@@ -1,0 +1,63 @@
+{
+  "dishes": [
+    { "id": "dish_001", "name": "Margherita Pizza", "category": "Pizza", "price": 55, "isAvailable": true, "createdAt": "2026-01-01" },
+    { "id": "dish_002", "name": "Couscous Royal", "category": "Traditionnel", "price": 70, "isAvailable": true, "createdAt": "2026-01-01" },
+    { "id": "dish_003", "name": "Pepperoni Pizza", "category": "Pizza", "price": 65, "isAvailable": true, "createdAt": "2026-01-02" },
+    { "id": "dish_004", "name": "Tagine Chicken", "category": "Traditionnel", "price": 60, "isAvailable": true, "createdAt": "2026-01-02" },
+    { "id": "dish_005", "name": "Caesar Salad", "category": "Salad", "price": 40, "isAvailable": true, "createdAt": "2026-01-02" },
+    { "id": "dish_006", "name": "Pasta Carbonara", "category": "Pasta", "price": 50, "isAvailable": true, "createdAt": "2026-01-03" },
+    { "id": "dish_007", "name": "Grilled Salmon", "category": "Seafood", "price": 90, "isAvailable": true, "createdAt": "2026-01-03" },
+    { "id": "dish_008", "name": "Beef Burger", "category": "Burger", "price": 55, "isAvailable": true, "createdAt": "2026-01-03" },
+    { "id": "dish_009", "name": "Vegetarian Pizza", "category": "Pizza", "price": 60, "isAvailable": false, "createdAt": "2025-12-28" },
+    { "id": "dish_010", "name": "Tiramisu", "category": "Dessert", "price": 35, "isAvailable": true, "createdAt": "2026-01-01" },
+    { "id": "dish_011", "name": "Greek Salad", "category": "Salad", "price": 38, "isAvailable": true, "createdAt": "2026-01-02" },
+    { "id": "dish_012", "name": "Pasta Bolognese", "category": "Pasta", "price": 48, "isAvailable": true, "createdAt": "2026-01-01" },
+    { "id": "dish_013", "name": "Shrimp Scampi", "category": "Seafood", "price": 85, "isAvailable": true, "createdAt": "2026-01-02" },
+    { "id": "dish_014", "name": "Chicken Burger", "category": "Burger", "price": 50, "isAvailable": true, "createdAt": "2026-01-03" },
+    { "id": "dish_015", "name": "Chocolate Cake", "category": "Dessert", "price": 30, "isAvailable": true, "createdAt": "2026-01-01" }
+  ],
+  "tables": [
+    { "id": "table_01", "number": 1, "seats": 4, "status": "free", "location": "Indoor", "createdAt": "2025-12-01" },
+    { "id": "table_02", "number": 2, "seats": 2, "status": "reserved", "location": "Indoor", "createdAt": "2025-12-01" },
+    { "id": "table_03", "number": 3, "seats": 6, "status": "occupied", "location": "Indoor", "createdAt": "2025-12-01" },
+    { "id": "table_04", "number": 4, "seats": 4, "status": "free", "location": "Terrace", "createdAt": "2025-12-01" },
+    { "id": "table_05", "number": 5, "seats": 2, "status": "free", "location": "Terrace", "createdAt": "2025-12-01" },
+    { "id": "table_06", "number": 6, "seats": 8, "status": "reserved", "location": "VIP", "createdAt": "2025-12-01" },
+    { "id": "table_07", "number": 7, "seats": 4, "status": "occupied", "location": "Indoor", "createdAt": "2025-12-01" },
+    { "id": "table_08", "number": 8, "seats": 2, "status": "free", "location": "Indoor", "createdAt": "2025-12-01" },
+    { "id": "table_09", "number": 9, "seats": 6, "status": "free", "location": "Terrace", "createdAt": "2025-12-01" },
+    { "id": "table_10", "number": 10, "seats": 4, "status": "maintenance", "location": "Indoor", "createdAt": "2025-12-01" }
+  ],
+  "employees": [
+    { "id": "emp_01", "fullName": "Sara El Amrani", "role": "waiter", "phone": "+212600000000", "email": "sara@mymanager.ma", "salary": 4000, "active": true, "hireDate": "2024-06-15" },
+    { "id": "emp_02", "fullName": "Ahmed Benjelloun", "role": "chef", "phone": "+212600000001", "email": "ahmed@mymanager.ma", "salary": 8000, "active": true, "hireDate": "2023-03-10" },
+    { "id": "emp_03", "fullName": "Fatima Zahra", "role": "waiter", "phone": "+212600000002", "email": "fatima@mymanager.ma", "salary": 4000, "active": true, "hireDate": "2024-08-20" },
+    { "id": "emp_04", "fullName": "Karim Alaoui", "role": "manager", "phone": "+212600000003", "email": "karim@mymanager.ma", "salary": 10000, "active": true, "hireDate": "2022-01-05" },
+    { "id": "emp_05", "fullName": "Nadia Boukhris", "role": "waiter", "phone": "+212600000004", "email": "nadia@mymanager.ma", "salary": 4000, "active": true, "hireDate": "2024-11-01" },
+    { "id": "emp_06", "fullName": "Youssef Idrissi", "role": "sous_chef", "phone": "+212600000005", "email": "youssef@mymanager.ma", "salary": 6000, "active": true, "hireDate": "2023-07-15" },
+    { "id": "emp_07", "fullName": "Laila Tazi", "role": "host", "phone": "+212600000006", "email": "laila@mymanager.ma", "salary": 3500, "active": true, "hireDate": "2024-09-10" },
+    { "id": "emp_08", "fullName": "Omar Chraibi", "role": "waiter", "phone": "+212600000007", "email": "omar@mymanager.ma", "salary": 4000, "active": false, "hireDate": "2024-05-20" }
+  ],
+  "reservations": [
+    { "id": "res_01", "customerName": "Youssef Bennani", "customerPhone": "+212611111111", "customerEmail": "youssef@email.com", "tableId": "table_02", "dateTime": "2026-01-03T20:30:00", "guests": 2, "status": "confirmed", "notes": "Window seat if possible", "createdAt": "2026-01-02T10:00:00" },
+    { "id": "res_02", "customerName": "Amina Sadik", "customerPhone": "+212622222222", "customerEmail": "amina@email.com", "tableId": "table_06", "dateTime": "2026-01-04T19:00:00", "guests": 8, "status": "confirmed", "notes": "Birthday celebration", "createdAt": "2026-01-02T14:30:00" },
+    { "id": "res_03", "customerName": "Hassan Taibi", "customerPhone": "+212633333333", "customerEmail": "hassan@email.com", "tableId": "table_04", "dateTime": "2026-01-03T21:00:00", "guests": 4, "status": "pending", "notes": "", "createdAt": "2026-01-03T09:15:00" },
+    { "id": "res_04", "customerName": "Sophia Martin", "customerPhone": "+212644444444", "customerEmail": "sophia@email.com", "tableId": "table_05", "dateTime": "2026-01-05T18:30:00", "guests": 2, "status": "confirmed", "notes": "Gluten-free options needed", "createdAt": "2026-01-03T11:00:00" },
+    { "id": "res_05", "customerName": "Mohamed Alami", "customerPhone": "+212655555555", "customerEmail": "mohamed@email.com", "tableId": "table_03", "dateTime": "2026-01-03T20:00:00", "guests": 6, "status": "seated", "notes": "", "createdAt": "2026-01-02T16:45:00" },
+    { "id": "res_06", "customerName": "Leila Fassi", "customerPhone": "+212666666666", "customerEmail": "leila@email.com", "tableId": "table_07", "dateTime": "2026-01-06T19:30:00", "guests": 4, "status": "pending", "notes": "Vegetarian menu", "createdAt": "2026-01-03T12:20:00" },
+    { "id": "res_07", "customerName": "Ibrahim Ziani", "customerPhone": "+212677777777", "customerEmail": "ibrahim@email.com", "tableId": "table_01", "dateTime": "2026-01-02T19:00:00", "guests": 4, "status": "completed", "notes": "", "createdAt": "2026-01-01T15:00:00" },
+    { "id": "res_08", "customerName": "Rachida Berrada", "customerPhone": "+212688888888", "customerEmail": "rachida@email.com", "tableId": "table_02", "dateTime": "2026-01-01T20:00:00", "guests": 2, "status": "cancelled", "notes": "Customer cancelled", "createdAt": "2025-12-31T10:00:00" }
+  ],
+  "orders": [
+    { "id": "ord_01", "tableId": "table_01", "employeeId": "emp_01", "status": "pending", "items": [{ "dishId": "dish_001", "qty": 2, "unitPrice": 55 }, { "dishId": "dish_005", "qty": 1, "unitPrice": 40 }], "total": 150, "createdAt": "2026-01-03T19:10:00", "notes": "" },
+    { "id": "ord_02", "tableId": "table_03", "employeeId": "emp_03", "status": "preparing", "items": [{ "dishId": "dish_002", "qty": 1, "unitPrice": 70 }, { "dishId": "dish_007", "qty": 2, "unitPrice": 90 }], "total": 250, "createdAt": "2026-01-03T19:30:00", "notes": "Extra spicy" },
+    { "id": "ord_03", "tableId": "table_07", "employeeId": "emp_01", "status": "ready", "items": [{ "dishId": "dish_008", "qty": 3, "unitPrice": 55 }, { "dishId": "dish_011", "qty": 2, "unitPrice": 38 }], "total": 241, "createdAt": "2026-01-03T18:45:00", "notes": "" },
+    { "id": "ord_04", "tableId": "table_02", "employeeId": "emp_05", "status": "delivered", "items": [{ "dishId": "dish_006", "qty": 1, "unitPrice": 50 }, { "dishId": "dish_010", "qty": 1, "unitPrice": 35 }], "total": 85, "createdAt": "2026-01-03T20:15:00", "notes": "No onions" },
+    { "id": "ord_05", "tableId": "table_04", "employeeId": "emp_03", "status": "completed", "items": [{ "dishId": "dish_003", "qty": 2, "unitPrice": 65 }, { "dishId": "dish_012", "qty": 1, "unitPrice": 48 }], "total": 178, "createdAt": "2026-01-03T17:30:00", "notes": "" },
+    { "id": "ord_06", "tableId": "table_01", "employeeId": "emp_01", "status": "completed", "items": [{ "dishId": "dish_004", "qty": 1, "unitPrice": 60 }, { "dishId": "dish_015", "qty": 2, "unitPrice": 30 }], "total": 120, "createdAt": "2026-01-02T19:00:00", "notes": "" },
+    { "id": "ord_07", "tableId": "table_05", "employeeId": "emp_05", "status": "completed", "items": [{ "dishId": "dish_013", "qty": 1, "unitPrice": 85 }, { "dishId": "dish_005", "qty": 1, "unitPrice": 40 }], "total": 125, "createdAt": "2026-01-02T20:30:00", "notes": "Table 5 - Terrace" },
+    { "id": "ord_08", "tableId": "table_06", "employeeId": "emp_03", "status": "cancelled", "items": [{ "dishId": "dish_001", "qty": 4, "unitPrice": 55 }], "total": 220, "createdAt": "2026-01-02T18:00:00", "notes": "Customer left" },
+    { "id": "ord_09", "tableId": "table_03", "employeeId": "emp_01", "status": "preparing", "items": [{ "dishId": "dish_002", "qty": 2, "unitPrice": 70 }, { "dishId": "dish_006", "qty": 2, "unitPrice": 50 }], "total": 240, "createdAt": "2026-01-03T19:45:00", "notes": "" },
+    { "id": "ord_10", "tableId": "table_08", "employeeId": "emp_05", "status": "pending", "items": [{ "dishId": "dish_014", "qty": 1, "unitPrice": 50 }, { "dishId": "dish_011", "qty": 1, "unitPrice": 38 }], "total": 88, "createdAt": "2026-01-03T20:00:00", "notes": "Quick service please" }
+  ]
+}

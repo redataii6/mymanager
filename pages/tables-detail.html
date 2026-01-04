@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyManager - Table Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark px-3">
+    <a href="../dashboard.html" class="navbar-brand mb-0 h1">🍽️ MyManager</a>
+    <div class="d-flex align-items-center gap-2">
+      <select id="langSelect" class="form-select form-select-sm w-auto">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+      <span class="text-white small" id="username"></span>
+      <button id="btnLogout" class="btn btn-sm btn-outline-light">Logout</button>
+    </div>
+  </nav>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h6 class="px-3 pt-3 text-uppercase small text-muted">Menu</h6>
+      <ul class="nav flex-column px-2 pb-3">
+        <li class="nav-item"><a class="nav-link" href="../dashboard.html">📊 Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="dishes.html">🍕 Dishes</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tables.html">🪑 Tables</a></li>
+        <li class="nav-item"><a class="nav-link" href="employees.html">👨‍🍳 Employees</a></li>
+        <li class="nav-item"><a class="nav-link" href="reservations.html">📅 Reservations</a></li>
+        <li class="nav-item"><a class="nav-link" href="orders.html">🧾 Orders</a></li>
+      </ul>
+    </aside>
+
+    <main class="content p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h4 mb-0">Table Details</h2>
+        <div class="d-flex gap-2">
+          <button class="btn btn-sm btn-outline-primary" onclick="exportPDF()">📄 Export PDF</button>
+          <a href="tables.html" class="btn btn-sm btn-secondary">← Back to List</a>
+        </div>
+      </div>
+
+      <div id="detailContent" class="detail-card">
+        <div class="text-center py-4">
+          <div class="spinner-border" role="status"></div>
+          <p class="mt-2">Loading...</p>
+        </div>
+      </div>
+
+      <div class="detail-card mt-4">
+        <h5 class="mb-3">Related Orders</h5>
+        <div id="relatedOrders"></div>
+      </div>
+
+      <div class="detail-card mt-4">
+        <h5 class="mb-3">Related Reservations</h5>
+        <div id="relatedReservations"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    requireAuth();
+    document.getElementById('username').textContent = sessionStorage.getItem('username');
+
+    let currentTable = null;
+    const urlParams = new URLSearchParams(window.location.search);
+    const tableId = urlParams.get('id');
+
+    if (!tableId) window.location.href = 'tables.html';
+
+    async function loadDetails() {
+      try {
+        const data = await loadDatabase();
+        currentTable = data.tables.find(t => t.id === tableId);
+        
+        if (!currentTable) {
+          document.getElementById('detailContent').innerHTML = 
+            '<div class="alert alert-danger">Table not found</div>';
+          return;
+        }
+
+        document.getElementById('detailContent').innerHTML = `
+          <div class="row">
+            <div class="col-md-6">
+              <div class="detail-row">
+                <div class="detail-label">ID:</div>
+                <div class="detail-value">${currentTable.id}</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Table Number:</div>
+                <div class="detail-value"><strong>Table ${currentTable.number}</strong></div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Seats:</div>
+                <div class="detail-value">${currentTable.seats} people</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="detail-row">
+                <div class="detail-label">Location:</div>
+                <div class="detail-value">${currentTable.location}</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Status:</div>
+                <div class="detail-value">
+                  <span class="badge ${getStatusBadgeClass(currentTable.status)}">${currentTable.status}</span>
+                </div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Created At:</div>
+                <div class="detail-value">${formatDate(currentTable.createdAt)}</div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Related orders
+        const relatedOrders = data.orders.filter(order => order.tableId === tableId);
+        if (relatedOrders.length > 0) {
+          document.getElementById('relatedOrders').innerHTML = `
+            <table class="table table-sm">
+              <thead>
+                <tr><th>Order ID</th><th>Employee</th><th>Status</th><th>Total</th><th>Date</th></tr>
+              </thead>
+              <tbody>
+                ${relatedOrders.map(order => `
+                  <tr>
+                    <td>${order.id}</td>
+                    <td>${order.employeeId}</td>
+                    <td><span class="badge ${getStatusBadgeClass(order.status)}">${order.status}</span></td>
+                    <td>${formatCurrency(order.total)}</td>
+                    <td>${formatDateTime(order.createdAt)}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        } else {
+          document.getElementById('relatedOrders').innerHTML = '<p class="text-muted">No orders for this table.</p>';
+        }
+
+        // Related reservations
+        const relatedReservations = data.reservations.filter(res => res.tableId === tableId);
+        if (relatedReservations.length > 0) {
+          document.getElementById('relatedReservations').innerHTML = `
+            <table class="table table-sm">
+              <thead>
+                <tr><th>Customer</th><th>Guests</th><th>Date & Time</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                ${relatedReservations.map(res => `
+                  <tr>
+                    <td>${res.customerName}</td>
+                    <td>${res.guests}</td>
+                    <td>${formatDateTime(res.dateTime)}</td>
+                    <td><span class="badge ${getStatusBadgeClass(res.status)}">${res.status}</span></td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        } else {
+          document.getElementById('relatedReservations').innerHTML = '<p class="text-muted">No reservations for this table.</p>';
+        }
+
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('detailContent').innerHTML = 
+          '<div class="alert alert-danger">Error loading details</div>';
+      }
+    }
+
+    function exportPDF() {
+      if (!currentTable) return;
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      doc.setFontSize(20);
+      doc.text('Table Details Report', 20, 20);
+      doc.setFontSize(12);
+      doc.text('MyManager Restaurant', 20, 30);
+      doc.text('Generated: ' + new Date().toLocaleString(), 20, 36);
+
+      doc.setFontSize(14);
+      doc.text('Table Information', 20, 50);
+      
+      doc.setFontSize(11);
+      let y = 60;
+      doc.text('ID: ' + currentTable.id, 30, y); y += 8;
+      doc.text('Table Number: ' + currentTable.number, 30, y); y += 8;
+      doc.text('Seats: ' + currentTable.seats, 30, y); y += 8;
+      doc.text('Location: ' + currentTable.location, 30, y); y += 8;
+      doc.text('Status: ' + currentTable.status, 30, y); y += 8;
+      doc.text('Created: ' + currentTable.createdAt, 30, y);
+
+      doc.save('table_' + currentTable.id + '_' + new Date().toISOString().split('T')[0] + '.pdf');
+    }
+
+    loadDetails();
+  </script>
+</body>
+</html>
