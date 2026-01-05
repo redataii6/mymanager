@@ -24,7 +24,113 @@ const translations = {
     total: 'Total',
     loading: 'Loading...',
     error: 'Error',
-    success: 'Success'
+    success: 'Success',
+    menu: 'Menu',
+    orders_management: 'Orders Management',
+    search_orders: 'Search orders...',
+    all_status: 'All Status',
+    all_tables: 'All Tables',
+    reset: 'Reset',
+    all_orders: 'All Orders',
+    add_order: 'Add Order',
+    export_csv: 'Export CSV',
+    id: 'ID',
+    date: 'Date',
+    showing: 'Showing',
+    of: 'of',
+    add_item: 'Add Item',
+    notes: 'Notes',
+    pending: 'Pending',
+    preparing: 'Preparing',
+    ready: 'Ready',
+    delivered: 'Delivered',
+    completed: 'Completed',
+    cancelled: 'Cancelled',
+    dashboard_overview: 'Dashboard Overview',
+    total_dishes: 'Total Dishes',
+    total_tables: 'Total Tables',
+    total_orders: 'Total Orders',
+    dishes_by_category: 'Dishes by Category',
+    table_status: 'Table Status',
+    orders_over_time: 'Orders Over Time',
+    reservation_status: 'Reservation Status',
+    revenue_by_dish: 'Revenue by Dish (Top 10)',
+    employee_activity: 'Employee Activity',
+    confirm_delete_order: 'Are you sure you want to delete this order?',
+    dishes_management: 'Dishes Management',
+    search_dishes: 'Search dishes...',
+    all_categories: 'All Categories',
+    available: 'Available',
+    unavailable: 'Unavailable',
+    all_dishes: 'All Dishes',
+    add_dish: 'Add Dish',
+    name: 'Name',
+    category: 'Category',
+    price: 'Price',
+    confirm_delete_dish: 'Are you sure you want to delete this dish?',
+    tables_management: 'Tables Management',
+    search_tables: 'Search tables...',
+    free: 'Free',
+    occupied: 'Occupied',
+    reserved: 'Reserved',
+    maintenance: 'Maintenance',
+    all_locations: 'All Locations',
+    indoor: 'Indoor',
+    terrace: 'Terrace',
+    vip: 'VIP',
+    add_table: 'Add Table',
+    number: 'Number',
+    seats: 'Seats',
+    location: 'Location',
+    table_number: 'Table Number',
+    number_of_seats: 'Number of Seats',
+    select_location: 'Select location',
+    confirm_delete_table: 'Are you sure you want to delete this table?',
+    employees_management: 'Employees Management',
+    search_employees: 'Search employees...',
+    all_roles: 'All Roles',
+    waiter: 'Waiter',
+    chef: 'Chef',
+    sous_chef: 'Sous Chef',
+    manager: 'Manager',
+    host: 'Host',
+    active: 'Active',
+    inactive: 'Inactive',
+    all_employees: 'All Employees',
+    add_employee: 'Add Employee',
+    role: 'Role',
+    phone: 'Phone',
+    salary: 'Salary',
+    full_name: 'Full Name',
+    email: 'Email',
+    select_role: 'Select role',
+    confirm_delete_employee: 'Are you sure you want to delete this employee?',
+    reservations_management: 'Reservations Management',
+    search_reservations: 'Search reservations...',
+    confirmed: 'Confirmed',
+    seated: 'Seated',
+    all_reservations: 'All Reservations',
+    add_reservation: 'Add Reservation',
+    customer: 'Customer',
+    date_time: 'Date & Time',
+    guests: 'Guests',
+    customer_name: 'Customer Name',
+    number_of_guests: 'Number of Guests',
+    confirm_delete_reservation: 'Are you sure you want to delete this reservation?',
+    system_subtitle: 'Restaurant Management System',
+    username_label: 'Username',
+    password_label: 'Password',
+    default: 'Default',
+    login_btn: 'Login',
+    error_loading_data: 'Error loading data',
+    no_dishes_found: 'No dishes found',
+    previous: 'Previous',
+    next: 'Next',
+    edit_dish: 'Edit Dish',
+    success_save: 'Saved successfully!',
+    success_delete: 'Deleted successfully!',
+    yes: 'Yes',
+    no: 'No'
   },
   fr: {
     dashboard: 'Tableau de bord',
@@ -48,7 +154,113 @@ const translations = {
     total: 'Total',
     loading: 'Chargement...',
     error: 'Erreur',
-    success: 'Succès'
+    success: 'Succès',
+    menu: 'Menu',
+    orders_management: 'Gestion des commandes',
+    search_orders: 'Rechercher des commandes...',
+    all_status: 'Tous les statuts',
+    all_tables: 'Toutes les tables',
+    reset: 'Réinitialiser',
+    all_orders: 'Toutes les commandes',
+    add_order: 'Ajouter une commande',
+    export_csv: 'Exporter CSV',
+    id: 'ID',
+    date: 'Date',
+    showing: 'Affichage de',
+    of: 'sur',
+    add_item: 'Ajouter un article',
+    notes: 'Notes',
+    pending: 'En attente',
+    preparing: 'En préparation',
+    ready: 'Prêt',
+    delivered: 'Livré',
+    completed: 'Terminé',
+    cancelled: 'Annulé',
+    dashboard_overview: 'Aperçu du tableau de bord',
+    total_dishes: 'Total des plats',
+    total_tables: 'Total des tables',
+    total_orders: 'Total des commandes',
+    dishes_by_category: 'Plats par catégorie',
+    table_status: 'Statut des tables',
+    orders_over_time: 'Commandes au fil du temps',
+    reservation_status: 'Statut des réservations',
+    revenue_by_dish: 'Revenu par plat (Top 10)',
+    employee_activity: 'Activité des employés',
+    confirm_delete_order: 'Êtes-vous sûr de vouloir supprimer cette commande ?',
+    dishes_management: 'Gestion des plats',
+    search_dishes: 'Rechercher des plats...',
+    all_categories: 'Toutes les catégories',
+    available: 'Disponible',
+    unavailable: 'Indisponible',
+    all_dishes: 'Tous les plats',
+    add_dish: 'Ajouter un plat',
+    name: 'Nom',
+    category: 'Catégorie',
+    price: 'Prix',
+    confirm_delete_dish: 'Êtes-vous sûr de vouloir supprimer ce plat ?',
+    tables_management: 'Gestion des tables',
+    search_tables: 'Rechercher des tables...',
+    free: 'Libre',
+    occupied: 'Occupée',
+    reserved: 'Réservée',
+    maintenance: 'Maintenance',
+    all_locations: 'Tous les emplacements',
+    indoor: 'Intérieur',
+    terrace: 'Terrasse',
+    vip: 'VIP',
+    add_table: 'Ajouter une table',
+    number: 'Numéro',
+    seats: 'Sièges',
+    location: 'Emplacement',
+    table_number: 'Numéro de table',
+    number_of_seats: 'Nombre de sièges',
+    select_location: 'Sélectionner l\'emplacement',
+    confirm_delete_table: 'Êtes-vous sûr de vouloir supprimer cette table ?',
+    employees_management: 'Gestion des employés',
+    search_employees: 'Rechercher des employés...',
+    all_roles: 'Tous les rôles',
+    waiter: 'Serveur',
+    chef: 'Chef',
+    sous_chef: 'Sous-chef',
+    manager: 'Gérant',
+    host: 'Hôte',
+    active: 'Actif',
+    inactive: 'Inactif',
+    all_employees: 'Tous les employés',
+    add_employee: 'Ajouter un employé',
+    role: 'Rôle',
+    phone: 'Téléphone',
+    salary: 'Salaire',
+    full_name: 'Nom complet',
+    email: 'E-mail',
+    select_role: 'Sélectionner le rôle',
+    confirm_delete_employee: 'Êtes-vous sûr de vouloir supprimer cet employé ?',
+    reservations_management: 'Gestion des réservations',
+    search_reservations: 'Rechercher des réservations...',
+    confirmed: 'Confirmé',
+    seated: 'Installé',
+    all_reservations: 'Toutes les réservations',
+    add_reservation: 'Ajouter une réservation',
+    customer: 'Client',
+    date_time: 'Date et heure',
+    guests: 'Invités',
+    customer_name: 'Nom du client',
+    number_of_guests: 'Nombre d\'invités',
+    confirm_delete_reservation: 'Êtes-vous sûr de vouloir supprimer cette réservation ?',
+    system_subtitle: 'Système de gestion de restaurant',
+    username_label: 'Nom d\'utilisateur',
+    password_label: 'Mot de passe',
+    default: 'Par défaut',
+    login_btn: 'Connexion',
+    error_loading_data: 'Erreur lors du chargement des données',
+    no_dishes_found: 'Aucun plat trouvé',
+    previous: 'Précédent',
+    next: 'Suivant',
+    edit_dish: 'Modifier le plat',
+    success_save: 'Enregistré avec succès !',
+    success_delete: 'Supprimé avec succès !',
+    yes: 'Oui',
+    no: 'Non'
   },
   ar: {
     dashboard: 'لوحة التحكم',
@@ -72,8 +284,113 @@ const translations = {
     total: 'المجموع',
     loading: 'جاري التحميل...',
     error: 'خطأ',
-    success: 'نجاح'
-  }
+    success: 'نجاح',
+    menu: 'القائمة',
+    orders_management: 'إدارة الطلبات',
+    search_orders: 'البحث عن الطلبات...',
+    all_status: 'جميع الحالات',
+    all_tables: 'جميع الطاولات',
+    reset: 'إعادة تعيين',
+    all_orders: 'جميع الطلبات',
+    add_order: 'إضافة طلب',
+    export_csv: 'تصدير CSV',
+    id: 'المعرف',
+    date: 'التاريخ',
+    showing: 'عرض',
+    of: 'من',
+    add_item: 'إضافة عنصر',
+    notes: 'ملاحظات',
+    pending: 'قيد الانتظار',
+    preparing: 'قيد التحضير',
+    ready: 'جاهز',    delivered: 'تم التوصيل',
+    completed: 'مكتمل',
+    cancelled: 'ملغى',
+    dashboard_overview: 'نظرة عامة على لوحة التحكم',
+    total_dishes: 'إجمالي الأطباق',
+    total_tables: 'إجمالي الطاولات',
+    total_orders: 'إجمالي الطلبات',
+    dishes_by_category: 'الأطباق حسب الفئة',
+    table_status: 'حالة الطاولة',
+    orders_over_time: 'الطلبات بمرور الوقت',
+    reservation_status: 'حالة الحجز',
+    revenue_by_dish: 'الإيرادات حسب الطبق (أفضل 10)',
+    employee_activity: 'نشاط الموظف',
+    confirm_delete_order: 'هل أنت متأكد أنك تريد حذف هذا الطلب؟',
+    dishes_management: 'إدارة الأطباق',
+    search_dishes: 'البحث عن الأطباق...',
+    all_categories: 'جميع الفئات',
+    available: 'متوفر',
+    unavailable: 'غير متوفر',
+    all_dishes: 'جميع الأطباق',
+    add_dish: 'إضافة طبق',
+    name: 'الاسم',
+    category: 'الفئة',
+    price: 'السعر',
+    confirm_delete_dish: 'هل أنت متأكد أنك تريد حذف هذا الطبق؟',
+    tables_management: 'إدارة الطاولات',
+    search_tables: 'البحث عن الطاولات...',
+    free: 'حر',
+    occupied: 'مشغول',
+    reserved: 'محجوز',
+    maintenance: 'صيانة',
+    all_locations: 'جميع المواقع',
+    indoor: 'داخلي',
+    terrace: 'تراس',
+    vip: 'VIP',
+    add_table: 'إضافة طاولة',
+    number: 'الرقم',
+    seats: 'المقاعد',
+    location: 'الموقع',
+    table_number: 'رقم الطاولة',
+    number_of_seats: 'عدد المقاعد',
+    select_location: 'اختر الموقع',
+    confirm_delete_table: 'هل أنت متأكد أنك تريد حذف هذه الطاولة؟',
+    employees_management: 'إدارة الموظفين',
+    search_employees: 'البحث عن الموظفين...',
+    all_roles: 'جميع الأدوار',
+    waiter: 'نادل',
+    chef: 'طباخ',
+    sous_chef: 'مساعد طباخ',
+    manager: 'مدير',
+    host: 'مضيف',
+    active: 'نشط',
+    inactive: 'غير نشط',
+    all_employees: 'جميع الموظفين',
+    add_employee: 'إضافة موظف',
+    role: 'الدور',
+    phone: 'الهاتف',
+    salary: 'الراتب',
+    full_name: 'الاسم الكامل',
+    email: 'البريد الإلكتروني',
+    select_role: 'اختر الدور',
+    confirm_delete_employee: 'هل أنت متأكد أنك تريد حذف هذا الموظف؟',
+    reservations_management: 'إدارة الحجوزات',
+    search_reservations: 'البحث عن الحجوزات...',
+    confirmed: 'مؤكد',
+    seated: 'جالس',
+    all_reservations: 'جميع الحجوزات',
+    add_reservation: 'إضافة حجز',
+    customer: 'العميل',
+    date_time: 'التاريخ والوقت',
+    guests: 'الضيوف',
+    customer_name: 'اسم العميل',
+    number_of_guests: 'عدد الضيوف',
+    confirm_delete_reservation: 'هل أنت متأكد أنك تريد حذف هذا الحجز؟',
+    system_subtitle: 'نظام إدارة المطاعم',
+    username_label: 'اسم المستخدم',
+    password_label: 'كلمة المرور',
+    default: 'الافتراضي',
+    login_btn: 'تسجيل الدخول',
+    error_loading_data: 'خطأ في تحميل البيانات',
+    no_dishes_found: 'لم يتم العثور على أطباق',
+    previous: 'السابق',
+    next: 'التالي',
+    edit_dish: 'تعديل الطبق',
+    success_save: 'تم الحفظ بنجاح!',
+    success_delete: 'تم الحذف بنجاح!',
+    yes: 'نعم',
+    no: 'لا'
+  },
 };
 
 // Get current language from session or default to English
@@ -84,8 +401,14 @@ function getCurrentLang() {
 // Set language
 function setLanguage(lang) {
   sessionStorage.setItem('language', lang);
-  
-  // Apply RTL for Arabic
+  applyLanguage(lang);
+  // Reload page to apply translations to dynamic content if needed
+  // location.reload(); 
+  // Instead of reload, we can just apply translations
+  applyTranslations();
+}
+
+function applyLanguage(lang) {
   if (lang === 'ar') {
     document.documentElement.setAttribute('dir', 'rtl');
     document.documentElement.setAttribute('lang', 'ar');
@@ -93,9 +416,6 @@ function setLanguage(lang) {
     document.documentElement.setAttribute('dir', 'ltr');
     document.documentElement.setAttribute('lang', lang);
   }
-  
-  // Reload page to apply translations
-  location.reload();
 }
 
 // Get translation
@@ -104,24 +424,33 @@ function t(key) {
   return translations[lang][key] || key;
 }
 
-// Initialize language selector
+// Apply translations to all elements with data-i18n attribute
+function applyTranslations() {
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const translation = t(key);
+    
+    if (el.tagName === 'INPUT' && (el.type === 'text' || el.type === 'search' || el.tagName === 'TEXTAREA')) {
+      el.placeholder = translation;
+    } else {
+      el.textContent = translation;
+    }
+  });
+}
+
+// Initialize language selector and apply translations
 document.addEventListener('DOMContentLoaded', function() {
   const langSelect = document.getElementById('langSelect');
+  const currentLang = getCurrentLang();
   
+  applyLanguage(currentLang);
+  applyTranslations();
+
   if (langSelect) {
-    // Set current language
-    langSelect.value = getCurrentLang();
-    
-    // Listen for changes
+    langSelect.value = currentLang;
     langSelect.addEventListener('change', function() {
       setLanguage(this.value);
     });
-  }
-  
-  // Apply current language direction
-  const currentLang = getCurrentLang();
-  if (currentLang === 'ar') {
-    document.documentElement.setAttribute('dir', 'rtl');
-    document.documentElement.setAttribute('lang', 'ar');
   }
 });

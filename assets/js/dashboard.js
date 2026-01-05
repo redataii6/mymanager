@@ -16,6 +16,18 @@ let data = {
   orders: []
 };
 
+// Logo Colors
+const colors = {
+  primary: '#3a86ff',
+  secondary: '#8338ec',
+  accent: '#ffbe0b',
+  success: '#2ecc71',
+  warning: '#ffbe0b',
+  danger: '#fb5607',
+  info: '#4cc9f0',
+  palette: ['#3a86ff', '#8338ec', '#ffbe0b', '#fb5607', '#4cc9f0', '#ff006e', '#3a0ca3', '#7209b7']
+};
+
 // Load data and initialize dashboard
 async function initDashboard() {
   try {
@@ -61,10 +73,7 @@ function createDishCategoryChart() {
       labels: Object.keys(categories),
       datasets: [{
         data: Object.values(categories),
-        backgroundColor: [
-          '#667eea', '#764ba2', '#f093fb', '#4facfe',
-          '#43e97b', '#fa709a', '#fee140', '#30cfd0'
-        ]
+        backgroundColor: colors.palette
       }]
     },
     options: {
@@ -93,7 +102,7 @@ function createTableStatusChart() {
       labels: Object.keys(status),
       datasets: [{
         data: Object.values(status),
-        backgroundColor: ['#28a745', '#ffc107', '#dc3545', '#6c757d']
+        backgroundColor: [colors.success, colors.warning, colors.danger, '#6c757d']
       }]
     },
     options: {
@@ -127,10 +136,13 @@ function createOrdersTimeChart() {
       datasets: [{
         label: 'Number of Orders',
         data: sortedDates.map(date => ordersByDate[date]),
-        borderColor: '#667eea',
-        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+        borderColor: colors.primary,
+        backgroundColor: 'rgba(58, 134, 255, 0.1)',
         fill: true,
-        tension: 0.4
+        tension: 0.4,
+        pointBackgroundColor: colors.primary,
+        pointBorderColor: '#fff',
+        pointHoverRadius: 6
       }]
     },
     options: {
@@ -168,10 +180,10 @@ function createReservationsChart() {
       datasets: [{
         data: Object.values(status),
         backgroundColor: [
-          'rgba(102, 126, 234, 0.7)',
-          'rgba(118, 75, 162, 0.7)',
-          'rgba(240, 147, 251, 0.7)',
-          'rgba(79, 172, 254, 0.7)'
+          'rgba(58, 134, 255, 0.7)',
+          'rgba(131, 56, 236, 0.7)',
+          'rgba(255, 190, 11, 0.7)',
+          'rgba(251, 86, 7, 0.7)'
         ]
       }]
     },
@@ -215,7 +227,8 @@ function createRevenueChart() {
       datasets: [{
         label: 'Revenue (MAD)',
         data: sorted.map(item => item[1]),
-        backgroundColor: '#667eea'
+        backgroundColor: colors.primary,
+        borderRadius: 8
       }]
     },
     options: {
@@ -255,7 +268,8 @@ function createEmployeeChart() {
       datasets: [{
         label: 'Orders Handled',
         data: Object.values(employeeOrders),
-        backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe']
+        backgroundColor: colors.palette,
+        borderRadius: 8
       }]
     },
     options: {

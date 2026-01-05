@@ -1,310 +1,248 @@
-# 🍽️ MyManager - Restaurant Backoffice Management System
+🍽️ MyManager – Système de Gestion Backoffice pour Restaurant
 
-A comprehensive backoffice application for managing restaurant operations, built with Vanilla JavaScript, HTML5, and CSS3.
+Une application backoffice complète destinée à la gestion des opérations d’un restaurant, développée en JavaScript natif (Vanilla JS), HTML5 et CSS3.
 
-## 👥 Team Members
+👥 Membres de l’Équipe
 
-- **[Your Name]** - Student ID: [ID] - [Email]
-- **[Team Member 2]** - Student ID: [ID] - [Email]
-- **[Team Member 3]** - Student ID: [ID] - [Email]
+[REDA_TAII] 
 
-## 📋 Project Description
+[MOUNIR_RAJAYI]
 
-MyManager is a complete restaurant management backoffice system that allows administrators to manage dishes, tables, employees, reservations, and orders. The application features a responsive design, comprehensive CRUD operations, and an interactive dashboard with multiple data visualizations.
+[SALMA_KARIM]
 
-## 🎯 Features
+📋 Description du Projet
 
-### Core Functionalities
+MyManager est une application backoffice de gestion de restaurant permettant aux administrateurs de gérer efficacement les plats, les tables, les employés, les réservations et les commandes.
+L’application propose une interface responsive, des fonctionnalités CRUD complètes et un tableau de bord interactif avec plusieurs visualisations de données.
 
-✅ **5 CRUD Entities:**
+🎯 Fonctionnalités
+Fonctionnalités Principales
 
-1. **Dishes** - Manage menu items with categories and pricing
-2. **Tables** - Track table availability and seating capacity
-3. **Employees** - Manage staff information and roles
-4. **Reservations** - Handle customer reservations
-5. **Orders** - Process and track customer orders
+✅ 5 Entités CRUD :
 
-✅ **Dashboard with 6 Charts:**
+Plats – Gestion du menu avec catégories et prix
 
-- Pie Chart: Dishes by Category
-- Doughnut Chart: Table Status Distribution
-- Line Chart: Orders Over Time
-- Polar Area Chart: Reservation Status
-- Horizontal Bar Chart: Revenue by Dish
-- Bar Chart: Employee Activity
+Tables – Suivi de la disponibilité et de la capacité des tables
 
-✅ **Advanced Features:**
+Employés – Gestion du personnel et des rôles
 
-- 🔐 Login/Logout system (admin/admin)
-- 🔍 Search and filter functionality
-- 📊 Sort by multiple columns
-- 📄 Export to CSV
-- 📑 Export details to PDF
-- 🌐 Internationalization (English, French, Arabic)
-- 📱 Fully responsive design
-- ⏱️ Pagination for large datasets
-- ✅ Form validation
-- 🗑️ Delete confirmation modals
+Réservations – Gestion des réservations clients
 
-## 🛠️ Technologies Used
+Commandes – Traitement et suivi des commandes
 
-### Core Technologies
+✅ Dashboard avec 6 graphiques :
 
-- **HTML5** - Structure and semantic markup
-- **CSS3** - Styling with modern features (Flexbox, Grid)
-- **Vanilla JavaScript** - All logic and interactivity (ES6+)
+Diagramme circulaire (Pie Chart) : Répartition des plats par catégorie
 
-### Libraries & Frameworks
+Diagramme en anneau (Doughnut Chart) : Statut des tables
 
-- **Bootstrap 5.3.3** - UI framework and responsive design
-- **Chart.js 4.4.0** - Data visualization and charts
-- **jsPDF 2.5.1** - PDF generation for reports
+Graphique linéaire (Line Chart) : Évolution des commandes dans le temps
 
-### Development Tools
+Diagramme polaire (Polar Area Chart) : Statut des réservations
 
-- **Git** - Version control
-- **GitHub** - Repository hosting
-- **VS Code** - Code editor
-- **Live Server** - Development server
+Diagramme en barres horizontales : Revenus par plat
 
-## 📁 Project Structure
+Diagramme en barres : Activité des employés
 
-```
+✅ Fonctionnalités Avancées :
+
+🔐 Système de connexion/déconnexion (admin / admin)
+
+🔍 Recherche et filtrage des données
+
+📊 Tri sur plusieurs colonnes
+
+📄 Export des données en CSV
+
+📑 Export des détails en PDF
+
+🌐 Internationalisation (Anglais, Français, Arabe)
+
+📱 Design entièrement responsive
+
+⏱️ Pagination des tableaux
+
+✅ Validation des formulaires
+
+🗑️ Fenêtres modales de confirmation de suppression
+
+🛠️ Technologies Utilisées
+Technologies Principales
+
+HTML5 – Structure et balisage sémantique
+
+CSS3 – Mise en forme moderne (Flexbox, Grid)
+
+JavaScript Natif (ES6+) – Logique et interactions
+
+Bibliothèques & Outils
+
+Bootstrap 5.3.3 – Design responsive et composants UI
+
+Chart.js 4.4.0 – Graphiques et visualisation de données
+
+jsPDF 2.5.1 – Génération de fichiers PDF
+
+Outils de Développement
+
+Git – Gestion de versions
+
+GitHub – Hébergement du repository
+
+VS Code – Éditeur de code
+
+Live Server – Serveur de développement local
+
+📁 Structure du Projet
 MyManager/
-├── index.html                      # Entry point (redirects to login)
-├── login.html                      # Login page
-├── dashboard.html                  # Main dashboard with charts
+├── index.html # Point d’entrée (redirection vers login)
+├── login.html # Page de connexion
+├── dashboard.html # Tableau de bord principal
 ├── data/
-│   └── db.json                     # Mock database
+│ └── db.json # Base de données simulée
 ├── assets/
-│   ├── css/
-│   │   └── style.css               # Custom styles
-│   ├── js/
-│   │   ├── auth.js                 # Authentication logic
-│   │   ├── dashboard.js            # Dashboard charts
-│   │   ├── crud-dishes.js          # Dishes CRUD operations
-│   │   ├── i18n.js                 # Internationalization
-│   │   └── utils.js                # Utility functions
-│   └── images/
-│       └── logo.png                # Company logo
+│ ├── css/
+│ │ └── style.css # Styles personnalisés
+│ ├── js/
+│ │ ├── auth.js # Authentification
+│ │ ├── dashboard.js # Graphiques du dashboard
+│ │ ├── crud-dishes.js # CRUD des plats
+│ │ ├── i18n.js # Internationalisation
+│ │ └── utils.js # Fonctions utilitaires
+│ └── images/
+│ └── logo.png # Logo de l’application
 ├── pages/
-│   ├── dishes.html                 # Dishes management
-│   ├── dishes-detail.html          # Dish details
-│   ├── tables.html                 # Tables management
-│   ├── employees.html              # Employees management
-│   ├── reservations.html           # Reservations management
-│   └── orders.html                 # Orders management
-└── README.md                       # This file
-```
+│ ├── dishes.html # Gestion des plats
+│ ├── dishes-detail.html # Détails d’un plat
+│ ├── tables.html # Gestion des tables
+│ ├── employees.html # Gestion des employés
+│ ├── reservations.html # Gestion des réservations
+│ └── orders.html # Gestion des commandes
+└── README.md # Documentation du projet
 
-## 🚀 Installation & Setup
+🚀 Installation et Lancement
+Prérequis
 
-### Prerequisites
+Navigateur web moderne (Chrome, Firefox, Edge, Safari)
 
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Live Server extension for VS Code (or any local web server)
+Extension Live Server pour VS Code (ou tout serveur local)
 
-### Steps to Run Locally
+Étapes d’Installation
 
-1. **Clone the repository**
+Cloner le repository
 
-```bash
-git clone https://github.com/[your-username]/mymanager.git
+git clone https://github.com/redataii6/mymanager
 cd mymanager
-```
 
-2. **Open with Live Server**
+Lancer avec Live Server
 
-   - Open the project folder in VS Code
-   - Right-click on `login.html`
-   - Select "Open with Live Server"
+Ouvrir le projet dans VS Code
 
-3. **Login**
-   - Username: `admin`
-   - Password: `admin`
+Clic droit sur login.html
 
-### Important Note
+Sélectionner Open with Live Server
 
-⚠️ The application must be run through a web server (not `file://` protocol) due to CORS restrictions when loading JSON data.
+Connexion
 
-## 📊 Data Source
+Nom d’utilisateur : admin
 
-The application uses a local JSON file (`data/db.json`) to simulate a backend database. In a production environment, this would be replaced with actual API calls to a backend server.
+Mot de passe : admin
 
-### Data Structure
+⚠️ Important :
+L’application doit être exécutée via un serveur web (et non file://) à cause des restrictions CORS liées au chargement du fichier JSON.
 
-```json
+📊 Source des Données
+
+Les données sont simulées à l’aide d’un fichier JSON local (data/db.json).
+Dans un environnement réel, ces données seraient fournies par une API backend.
+
+Exemple de Structure des Données
 {
-  "dishes": [
-    {
-      "id": "dish_001",
-      "name": "Margherita",
-      "category": "Pizza",
-      "price": 55,
-      "isAvailable": true,
-      "createdAt": "2026-01-03"
-    }
-  ],
-  "tables": [...],
-  "employees": [...],
-  "reservations": [...],
-  "orders": [...]
+"dishes": [
+{
+"id": "dish_001",
+"name": "Margherita",
+"category": "Pizza",
+"price": 55,
+"isAvailable": true,
+"createdAt": "2026-01-03"
 }
-```
+]
+}
 
-## 🌐 Deployment
+🌐 Déploiement
 
-The application is deployed and accessible at:
+L’application est déployée et accessible à l’adresse suivante :
 
-**Live Demo:** [https://your-username.github.io/mymanager](https://your-username.github.io/mymanager)
+Démo en ligne :
+https://github.com/redataii6/mymanager
 
-### Deployment Instructions (GitHub Pages)
+Déploiement avec GitHub Pages
 
-1. **Push your code to GitHub**
+Push du code sur GitHub
 
-```bash
-git add .
-git commit -m "Deploy application"
-git push origin main
-```
+Aller dans Settings → Pages
 
-2. **Enable GitHub Pages**
+Sélectionner la branche main
 
-   - Go to repository Settings
-   - Navigate to Pages section
-   - Select `main` branch as source
-   - Save and wait for deployment
+Sauvegarder et attendre le déploiement
 
-3. **Alternative: Vercel/Netlify**
-   - Connect your GitHub repository
-   - Deploy with one click
-   - Automatic deployments on push
+📖 Guide d’Utilisation
+Administrateur
 
-## 📖 Usage Guide
+Consultation du dashboard et des statistiques
 
-### For Administrators
+Gestion complète des plats, tables, employés, réservations et commandes
 
-1. **Dashboard**
+Export des données (CSV / PDF)
 
-   - View overall statistics
-   - Analyze data through 6 different charts
-   - Quick overview of restaurant operations
+Analyse via graphiques interactifs
 
-2. **Managing Dishes**
+🔧 Bonnes Pratiques de Développement
 
-   - Add new dishes with category and pricing
-   - Edit existing dishes
-   - View detailed information
-   - Export data to CSV or PDF
-   - Mark dishes as available/unavailable
+Code JavaScript modulaire et commenté
 
-3. **Managing Tables**
+Respect des conventions de nommage
 
-   - Track table status (free, occupied, reserved)
-   - View seating capacity
-   - Update table information
+Design responsive
 
-4. **Managing Employees**
+Compatibilité multi-navigateurs
 
-   - Add staff members
-   - Assign roles
-   - Track active employees
+🐛 Limites et Améliorations Futures
+Limitations Actuelles
 
-5. **Managing Reservations**
+Données non persistantes après rafraîchissement
 
-   - Create new reservations
-   - Confirm or cancel reservations
-   - View customer information
+Absence de backend réel
 
-6. **Managing Orders**
-   - Process new orders
-   - Track order status
-   - View order details and totals
+Un seul rôle utilisateur (admin)
 
-## 🔧 Development Guidelines
+Améliorations Futures
 
-### Code Organization
+Intégration d’une API backend
 
-- All JavaScript is modular and well-commented
-- CSS follows BEM-like naming conventions
-- HTML uses semantic elements
+Authentification avancée (JWT)
 
-### Best Practices Followed
+Gestion des rôles et permissions
 
-- ✅ Clean, readable code
-- ✅ Consistent naming conventions
-- ✅ Error handling for async operations
-- ✅ Responsive design principles
-- ✅ Accessibility considerations
-- ✅ Cross-browser compatibility
+Notifications par email
 
-### Adding New Features
+Mode sombre
 
-1. **Add a New Entity**
+📄 Licence
 
-   - Create HTML page in `/pages/`
-   - Create corresponding JS file in `/assets/js/`
-   - Add data structure in `db.json`
-   - Update navigation menu
+Ce projet est réalisé à des fins académiques dans le cadre du module JavaScript & Développement Web à [Nom de l’Université].
 
-2. **Add a New Chart**
-   - Edit `assets/js/dashboard.js`
-   - Add canvas element in `dashboard.html`
-   - Use Chart.js documentation for chart types
+🙏 Remerciements
 
-## 🐛 Known Issues & Future Improvements
+Enseignant : [AHAJJAM Tarik]
 
-### Current Limitations
+Module : JavaScript & Web Development
 
-- Data is not persisted (changes lost on page refresh)
-- No real backend integration
-- Limited user roles (only admin)
+Établissement : [EMSI]
 
-### Planned Improvements
+Année Universitaire : 2025–2026
 
-- [ ] Backend API integration
-- [ ] Real-time data updates
-- [ ] Advanced user authentication with JWT
-- [ ] Role-based access control
-- [ ] Email notifications
-- [ ] Advanced reporting features
-- [ ] Dark mode toggle
-
-## 📚 Learning Resources
-
-- [MDN Web Docs](https://developer.mozilla.org/)
-- [Bootstrap Documentation](https://getbootstrap.com/docs/)
-- [Chart.js Documentation](https://www.chartjs.org/docs/)
-- [JavaScript.info](https://javascript.info/)
-
-## 🤝 Contributing
-
-This is an academic project, but suggestions are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## 📄 License
-
-This project is created for educational purposes as part of the JavaScript course at [Your University Name].
-
-## 📞 Contact
-
-- **Project Link:** [https://github.com/your-username/mymanager](https://github.com/your-username/mymanager)
-- **Email:** your.email@example.com
-
-## 🙏 Acknowledgments
-
-- Teacher: [Professor Name]
-- Course: JavaScript & Web Development
-- Institution: [Your University]
-- Academic Year: 2025-2026
-
----
-
-**Last Updated:** January 3, 2026
-**Version:** 1.0.0
-**Status:** ✅ Completed
+Dernière mise à jour : 03 Janvier 2026
+Version : 1.2.0
+Statut : ✅ Terminé

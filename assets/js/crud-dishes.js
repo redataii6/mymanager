@@ -52,7 +52,7 @@ async function loadDishes() {
   } catch (error) {
     console.error('Error loading dishes:', error);
     document.getElementById('dishesTableBody').innerHTML = 
-      '<tr><td colspan="6" class="text-center text-danger">Error loading data</td></tr>';
+      `<tr><td colspan="6" class="text-center text-danger">${t('error_loading_data')}</td></tr>`;
   }
 }
 
@@ -121,7 +121,7 @@ function renderTable() {
   const tbody = document.getElementById('dishesTableBody');
   
   if (pageData.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="6" class="text-center">No dishes found</td></tr>';
+    tbody.innerHTML = `<tr><td colspan="6" class="text-center">${t('no_dishes_found')}</td></tr>`;
     return;
   }
   
@@ -133,18 +133,18 @@ function renderTable() {
       <td>${dish.price} MAD</td>
       <td>
         <span class="badge ${dish.isAvailable ? 'bg-success' : 'bg-danger'}">
-          ${dish.isAvailable ? 'Available' : 'Unavailable'}
+          ${dish.isAvailable ? t('available') : t('unavailable')}
         </span>
       </td>
       <td>
         <button class="btn btn-sm btn-primary" onclick="viewDetails('${dish.id}')">
-          👁️ View
+          👁️ ${t('view')}
         </button>
         <button class="btn btn-sm btn-warning" onclick="openEditModal('${dish.id}')">
-          ✏️ Edit
+          ✏️ ${t('edit')}
         </button>
         <button class="btn btn-sm btn-danger" onclick="openDeleteModal('${dish.id}')">
-          🗑️ Delete
+          🗑️ ${t('delete')}
         </button>
       </td>
     </tr>
@@ -169,7 +169,7 @@ function renderPagination() {
   // Previous button
   html += `
     <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-      <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>
+      <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">${t('previous')}</a>
     </li>
   `;
   
@@ -189,7 +189,7 @@ function renderPagination() {
   // Next button
   html += `
     <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-      <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>
+      <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">${t('next')}</a>
     </li>
   `;
   
@@ -208,7 +208,7 @@ function changePage(page) {
 
 // Open create modal
 function openCreateModal() {
-  document.getElementById('modalTitle').textContent = 'Add New Dish';
+  document.getElementById('modalTitle').textContent = t('add_dish');
   document.getElementById('dishForm').reset();
   document.getElementById('dishId').value = '';
   dishModal.show();
@@ -219,7 +219,7 @@ function openEditModal(id) {
   const dish = allDishes.find(d => d.id === id);
   if (!dish) return;
   
-  document.getElementById('modalTitle').textContent = 'Edit Dish';
+  document.getElementById('modalTitle').textContent = t('edit_dish');
   document.getElementById('dishId').value = dish.id;
   document.getElementById('dishName').value = dish.name;
   document.getElementById('dishCategory').value = dish.category;
@@ -254,7 +254,7 @@ function saveDish() {
   applyFilters();
   
   // Show success message
-  alert('Dish saved successfully!');
+  alert(t('success_save'));
 }
 
 // Open delete modal
@@ -272,7 +272,7 @@ function confirmDelete() {
   allDishes = allDishes.filter(d => d.id !== deleteId);
   deleteModal.hide();
   applyFilters();
-  alert('Dish deleted successfully!');
+  alert(t('success_delete'));
 }
 
 // View details
@@ -282,13 +282,13 @@ function viewDetails(id) {
 
 // Export to CSV
 function exportToCSV() {
-  const headers = ['ID', 'Name', 'Category', 'Price', 'Available', 'Created At'];
+  const headers = [t('id'), t('name'), t('category'), t('price'), t('available'), t('date')];
   const rows = filteredDishes.map(dish => [
     dish.id,
     dish.name,
     dish.category,
     dish.price,
-    dish.isAvailable ? 'Yes' : 'No',
+    dish.isAvailable ? t('yes') : t('no'),
     dish.createdAt
   ]);
   
